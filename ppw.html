@@ -1,0 +1,1479 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CRAWLING DETIK.COM &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ppw';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/custom.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Amelia’s Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/foto emi.jpeg" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/foto emi.jpeg" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Amelia’s Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">CRAWLING DETIK.COM</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fppw.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ppw.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CRAWLING DETIK.COM</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-library">Instalasi Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-konfigurasi-awal">Import Library dan Konfigurasi Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-normalisasi-url">Fungsi Normalisasi URL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-pengambilan-tautan-berita">Fungsi Pengambilan Tautan Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scraping-link-kategori-sport">Scraping Link Kategori Sport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scraping-link-kategori-finance">Scraping Link Kategori Finance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-pembersihan-teks-berita">Fungsi Pembersihan Teks Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-ekstraksi-isi-berita">Fungsi Ekstraksi Isi Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-scraping-konten-berdasarkan-kategori">Fungsi Scraping Konten Berdasarkan Kategori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksekusi-scraping-konten-sport">Eksekusi Scraping Konten Sport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksekusi-scraping-konten-finance">Eksekusi Scraping Konten Finance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penggabungan-data">Penggabungan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-dataframe">Pembuatan DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penambahan-kolom-id">Penambahan Kolom ID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penataan-urutan-kolom">Penataan Urutan Kolom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data">Menampilkan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-total-data">Pengecekan Total Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-proporsi-label">Pengecekan Proporsi Label</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyimpanan-data-ke-file-excel">Penyimpanan Data ke File Excel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-lokasi-file">Pengecekan Lokasi File</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling-detik-com">
+<h1>CRAWLING <a class="reference external" href="http://DETIK.COM">DETIK.COM</a><a class="headerlink" href="#crawling-detik-com" title="Link to this heading">#</a></h1>
+<section id="instalasi-library">
+<h2>Instalasi Library<a class="headerlink" href="#instalasi-library" title="Link to this heading">#</a></h2>
+<p>Kode ini digunakan untuk menginstal beberapa library Python yang dibutuhkan untuk melakukan web scraping dan pengolahan data, yaitu requests, beautifulsoup4, trafilatura, pandas, openpyxl, dan tqdm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jika belum install library, jalankan sekali saja</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>requests<span class="w"> </span>beautifulsoup4<span class="w"> </span>trafilatura<span class="w"> </span>pandas<span class="w"> </span>openpyxl<span class="w"> </span>tqdm
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (2.34.2)
+Requirement already satisfied: beautifulsoup4 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (4.15.0)
+Requirement already satisfied: trafilatura in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (2.2.0)
+Requirement already satisfied: pandas in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (3.0.5)
+Collecting openpyxl
+  Downloading openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting tqdm
+  Downloading tqdm-4.70.0-py3-none-any.whl.metadata (57 kB)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from requests) (3.5.1)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from requests) (3.18)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from requests) (2.7.0)
+Requirement already satisfied: certifi&gt;=2023.5.7 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from requests) (2026.7.22)
+Requirement already satisfied: soupsieve&gt;=1.6.1 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from beautifulsoup4) (2.8.4)
+Requirement already satisfied: typing-extensions&gt;=4.0.0 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from beautifulsoup4) (4.16.0)
+Requirement already satisfied: courlan&gt;=1.4.0 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from trafilatura) (1.4.0)
+Requirement already satisfied: htmldate&gt;=1.10.0 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from trafilatura) (1.10.0)
+Requirement already satisfied: justext&gt;=3.0.2 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from trafilatura) (3.0.2)
+Requirement already satisfied: lxml&gt;=6.1.1 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from trafilatura) (6.1.3)
+Requirement already satisfied: numpy&gt;=1.26.0 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from pandas) (2.4.6)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: tzdata in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from pandas) (2026.3)
+Collecting et-xmlfile (from openpyxl)
+  Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+Requirement already satisfied: colorama in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from tqdm) (0.4.6)
+Requirement already satisfied: babel&gt;=2.16.0 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from courlan&gt;=1.4.0-&gt;trafilatura) (2.18.0)
+Requirement already satisfied: tld&gt;=0.13 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from courlan&gt;=1.4.0-&gt;trafilatura) (0.13.2)
+Requirement already satisfied: dateparser&gt;=1.1.2 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from htmldate&gt;=1.10.0-&gt;trafilatura) (1.4.3)
+Requirement already satisfied: pytz&gt;=2024.2 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from dateparser&gt;=1.1.2-&gt;htmldate&gt;=1.10.0-&gt;trafilatura) (2026.3.post1)
+Requirement already satisfied: regex&gt;=2024.9.11 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from dateparser&gt;=1.1.2-&gt;htmldate&gt;=1.10.0-&gt;trafilatura) (2026.9.3)
+Requirement already satisfied: tzlocal&gt;=0.2 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from dateparser&gt;=1.1.2-&gt;htmldate&gt;=1.10.0-&gt;trafilatura) (5.4.4)
+Requirement already satisfied: lxml_html_clean in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from lxml[html_clean]&gt;=4.4.2-&gt;justext&gt;=3.0.2-&gt;trafilatura) (0.4.5)
+Requirement already satisfied: six&gt;=1.5 in C:\Users\safit\anaconda3\envs\enWebmining\Lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
+Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+Downloading tqdm-4.70.0-py3-none-any.whl (80 kB)
+Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+Installing collected packages: tqdm, et-xmlfile, openpyxl
+
+   ---------------------------------------- 0/3 [tqdm]
+   ---------------------------------------- 0/3 [tqdm]
+   ---------------------------------------- 0/3 [tqdm]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   -------------------------- ------------- 2/3 [openpyxl]
+   ---------------------------------------- 3/3 [openpyxl]
+
+Successfully installed et-xmlfile-2.0.0 openpyxl-3.1.5 tqdm-4.70.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-library-dan-konfigurasi-awal">
+<h2>Import Library dan Konfigurasi Awal<a class="headerlink" href="#import-library-dan-konfigurasi-awal" title="Link to this heading">#</a></h2>
+<p>Bagian ini mengimpor semua modul Python yang diperlukan untuk scraping (seperti re, requests, BeautifulSoup, trafilatura, dll). Selain itu, kode ini melakukan konfigurasi HTTP Header (User-Agent) agar permintaan web tidak diblokir oleh server, serta mendefinisikan URL target kategori berita (sport dan finance) dari situs web Detik</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">trafilatura</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urljoin</span><span class="p">,</span> <span class="n">urlsplit</span><span class="p">,</span> <span class="n">urlunsplit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<span class="c1"># ============================================================</span>
+<span class="c1"># 1. KONFIGURASI</span>
+<span class="c1"># ============================================================</span>
+
+<span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"User-Agent"</span><span class="p">:</span> <span class="p">(</span>
+        <span class="s2">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) "</span>
+        <span class="s2">"AppleWebKit/537.36 (KHTML, like Gecko) "</span>
+        <span class="s2">"Chrome/152.0 Safari/537.36"</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">HEADERS</span><span class="p">)</span>
+
+
+<span class="n">kategori</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"sport"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://sport.detik.com/indeks"</span><span class="p">,</span>
+        <span class="s2">"domain"</span><span class="p">:</span> <span class="s2">"sport.detik.com"</span>
+    <span class="p">},</span>
+
+    <span class="s2">"finance"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://finance.detik.com/indeks"</span><span class="p">,</span>
+        <span class="s2">"domain"</span><span class="p">:</span> <span class="s2">"finance.detik.com"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fungsi-normalisasi-url">
+<h2>Fungsi Normalisasi URL<a class="headerlink" href="#fungsi-normalisasi-url" title="Link to this heading">#</a></h2>
+<p>Kode ini membuat sebuah fungsi bernama normalize_url yang bertugas untuk membersihkan URL. Fungsi ini menghapus parameter query dan fragment dari tautan web untuk mencegah pengambilan URL yang duplikat nantinya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">normalize_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Menghapus query parameter dan fragment dari URL.</span>
+<span class="sd">    """</span>
+
+    <span class="n">bagian</span> <span class="o">=</span> <span class="n">urlsplit</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="n">url_bersih</span> <span class="o">=</span> <span class="n">urlunsplit</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">bagian</span><span class="o">.</span><span class="n">scheme</span><span class="p">,</span>
+            <span class="n">bagian</span><span class="o">.</span><span class="n">netloc</span><span class="p">,</span>
+            <span class="n">bagian</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+            <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">""</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">url_bersih</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fungsi-pengambilan-tautan-berita">
+<h2>Fungsi Pengambilan Tautan Berita<a class="headerlink" href="#fungsi-pengambilan-tautan-berita" title="Link to this heading">#</a></h2>
+<p>Fungsi ambil_link_berita dirancang untuk menelusuri halaman indeks berita (berdasarkan pagination) dan mengekstrak semua tautan artikel. Fungsi ini menyaring URL agar hanya mengambil tautan artikel dengan format spesifik milik Detik (memiliki pola /d-angka) dan mengumpulkan tautan tersebut hingga mencapai target jumlah yang ditentukan (misalnya 150 tautan).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ambil_link_berita</span><span class="p">(</span><span class="n">index_url</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">max_page</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+
+    <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sudah_ada</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+
+        <span class="n">url_page</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">index_url</span><span class="si">}</span><span class="s2">?page=</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">"</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Membaca halaman </span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">url_page</span><span class="p">,</span>
+                <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span>
+            <span class="p">)</span>
+
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Error:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+            <span class="s2">"html.parser"</span>
+        <span class="p">)</span>
+
+
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+            <span class="n">href</span> <span class="o">=</span> <span class="n">urljoin</span><span class="p">(</span>
+                <span class="n">url_page</span><span class="p">,</span>
+                <span class="n">tag</span><span class="p">[</span><span class="s2">"href"</span><span class="p">]</span>
+            <span class="p">)</span>
+
+            <span class="n">href</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">href</span><span class="p">)</span>
+
+            <span class="n">parsed</span> <span class="o">=</span> <span class="n">urlsplit</span><span class="p">(</span><span class="n">href</span><span class="p">)</span>
+
+
+            <span class="c1"># URL artikel Detik biasanya memiliki /d-xxxx</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">parsed</span><span class="o">.</span><span class="n">netloc</span> <span class="o">==</span> <span class="n">domain</span>
+                <span class="ow">and</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"/d-\d+"</span><span class="p">,</span> <span class="n">parsed</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="p">):</span>
+
+                <span class="k">if</span> <span class="n">href</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sudah_ada</span><span class="p">:</span>
+
+                    <span class="n">sudah_ada</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">href</span><span class="p">)</span>
+
+                    <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">href</span><span class="p">)</span>
+
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">"Jumlah link:"</span><span class="p">,</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
+        <span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">break</span>
+
+
+        <span class="c1"># delay</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span>
+            <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">)</span>
+
+
+    <span class="k">return</span> <span class="n">links</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="scraping-link-kategori-sport">
+<h2>Scraping Link Kategori Sport<a class="headerlink" href="#scraping-link-kategori-sport" title="Link to this heading">#</a></h2>
+<p>Kode ini memanggil fungsi ambil_link_berita untuk mencari dan mengumpulkan hingga 150 tautan artikel khusus dari kategori “sport”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">link_sport</span> <span class="o">=</span> <span class="n">ambil_link_berita</span><span class="p">(</span>
+    <span class="n">kategori</span><span class="p">[</span><span class="s2">"sport"</span><span class="p">][</span><span class="s2">"url"</span><span class="p">],</span>
+    <span class="n">kategori</span><span class="p">[</span><span class="s2">"sport"</span><span class="p">][</span><span class="s2">"domain"</span><span class="p">],</span>
+    <span class="n">target</span><span class="o">=</span><span class="mi">150</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">"Total kandidat Sport:"</span><span class="p">,</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">link_sport</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Membaca halaman 1
+Jumlah link: 20
+Membaca halaman 2
+Jumlah link: 40
+Membaca halaman 3
+Jumlah link: 60
+Membaca halaman 4
+Jumlah link: 79
+Membaca halaman 5
+Jumlah link: 98
+Membaca halaman 6
+Jumlah link: 117
+Membaca halaman 7
+Jumlah link: 137
+Membaca halaman 8
+Jumlah link: 157
+Total kandidat Sport: 157
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="scraping-link-kategori-finance">
+<h2>Scraping Link Kategori Finance<a class="headerlink" href="#scraping-link-kategori-finance" title="Link to this heading">#</a></h2>
+<p>Kode ini memanggil fungsi ambil_link_berita kembali, namun kali ini untuk mencari dan mengumpulkan hingga 150 tautan artikel khusus dari kategori “finance”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">link_finance</span> <span class="o">=</span> <span class="n">ambil_link_berita</span><span class="p">(</span>
+    <span class="n">kategori</span><span class="p">[</span><span class="s2">"finance"</span><span class="p">][</span><span class="s2">"url"</span><span class="p">],</span>
+    <span class="n">kategori</span><span class="p">[</span><span class="s2">"finance"</span><span class="p">][</span><span class="s2">"domain"</span><span class="p">],</span>
+    <span class="n">target</span><span class="o">=</span><span class="mi">150</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">"Total kandidat Finance:"</span><span class="p">,</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">link_finance</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Membaca halaman 1
+Jumlah link: 20
+Membaca halaman 2
+Jumlah link: 38
+Membaca halaman 3
+Jumlah link: 58
+Membaca halaman 4
+Jumlah link: 77
+Membaca halaman 5
+Jumlah link: 97
+Membaca halaman 6
+Jumlah link: 114
+Membaca halaman 7
+Jumlah link: 134
+Membaca halaman 8
+Jumlah link: 154
+Total kandidat Finance: 154
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fungsi-pembersihan-teks-berita">
+<h2>Fungsi Pembersihan Teks Berita<a class="headerlink" href="#fungsi-pembersihan-teks-berita" title="Link to this heading">#</a></h2>
+<p>Fungsi bersihkan_teks dibuat untuk merapikan teks artikel yang telah diekstrak. Fungsi ini secara otomatis menghapus kata-kata tidak penting seperti “ADVERTISEMENT” dan “SCROLL TO CONTINUE WITH CONTENT”, serta merapikan spasi yang berlebihan di dalam teks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bersihkan_teks</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">teks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+    <span class="c1"># menghapus teks iklan</span>
+    <span class="n">teks</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">"ADVERTISEMENT"</span><span class="p">,</span>
+        <span class="s2">" "</span><span class="p">,</span>
+        <span class="n">teks</span><span class="p">,</span>
+        <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span>
+    <span class="p">)</span>
+
+
+    <span class="n">teks</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">"SCROLL TO CONTINUE WITH CONTENT"</span><span class="p">,</span>
+        <span class="s2">" "</span><span class="p">,</span>
+        <span class="n">teks</span><span class="p">,</span>
+        <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span>
+    <span class="p">)</span>
+
+
+    <span class="c1"># menghapus spasi berlebihan</span>
+    <span class="n">teks</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">"\s+"</span><span class="p">,</span>
+        <span class="s2">" "</span><span class="p">,</span>
+        <span class="n">teks</span>
+    <span class="p">)</span>
+
+
+    <span class="k">return</span> <span class="n">teks</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fungsi-ekstraksi-isi-berita">
+<h2>Fungsi Ekstraksi Isi Berita<a class="headerlink" href="#fungsi-ekstraksi-isi-berita" title="Link to this heading">#</a></h2>
+<p>ungsi ambil_isi_berita digunakan untuk mengunduh halaman web dari URL artikel yang diberikan dan menggunakan library trafilatura untuk mengekstrak teks utama dari berita tersebut. Setelah teks diambil, teks tersebut langsung dibersihkan menggunakan fungsi bersihkan_teks sebelumnya, dengan syarat teks harus memiliki panjang minimal 300 karakter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ambil_isi_berita</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="mi">25</span>
+        <span class="p">)</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+
+        <span class="n">isi</span> <span class="o">=</span> <span class="n">trafilatura</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+            <span class="n">include_comments</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">include_tables</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">output_format</span><span class="o">=</span><span class="s2">"txt"</span><span class="p">,</span>
+            <span class="n">favor_precision</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">deduplicate</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+
+
+        <span class="n">isi</span> <span class="o">=</span> <span class="n">bersihkan_teks</span><span class="p">(</span><span class="n">isi</span><span class="p">)</span>
+
+
+        <span class="c1"># menghindari halaman kosong</span>
+        <span class="c1"># atau isi yang terlalu pendek</span>
+        <span class="k">if</span> <span class="n">isi</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">isi</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">300</span><span class="p">:</span>
+
+            <span class="k">return</span> <span class="n">isi</span>
+
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">"Gagal:"</span><span class="p">,</span>
+            <span class="n">url</span>
+        <span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">"Error:"</span><span class="p">,</span>
+            <span class="n">e</span>
+        <span class="p">)</span>
+
+
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fungsi-scraping-konten-berdasarkan-kategori">
+<h2>Fungsi Scraping Konten Berdasarkan Kategori<a class="headerlink" href="#fungsi-scraping-konten-berdasarkan-kategori" title="Link to this heading">#</a></h2>
+<p>Kode ini mendefinisikan fungsi scraping_kategori yang bertugas untuk melakukan perulangan (looping) pada daftar URL, mengekstrak teks beritanya satu per satu, dan menyimpan hasilnya beserta label kategorinya ke dalam bentuk list. Fungsi ini dilengkapi dengan delay secara acak (1 hingga 2 detik) agar proses scraping tidak terlalu membebani server target</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scraping_kategori</span><span class="p">(</span>
+    <span class="n">links</span><span class="p">,</span>
+    <span class="n">label</span><span class="p">,</span>
+    <span class="n">target</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">):</span>
+
+    <span class="n">hasil</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+        <span class="n">links</span><span class="p">,</span>
+        <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Scraping </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">):</span>
+
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">break</span>
+
+
+        <span class="n">isi</span> <span class="o">=</span> <span class="n">ambil_isi_berita</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="n">isi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">hasil</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">"isi_berita"</span><span class="p">:</span> <span class="n">isi</span><span class="p">,</span>
+                    <span class="s2">"label"</span><span class="p">:</span> <span class="n">label</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+
+
+        <span class="c1"># delay supaya tidak terlalu cepat</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span>
+            <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">)</span>
+
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> berhasil:"</span><span class="p">,</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+    <span class="p">)</span>
+
+
+    <span class="k">return</span> <span class="n">hasil</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksekusi-scraping-konten-sport">
+<h2>Eksekusi Scraping Konten Sport<a class="headerlink" href="#eksekusi-scraping-konten-sport" title="Link to this heading">#</a></h2>
+<p>Kode ini menjalankan fungsi scraping_kategori untuk tautan-tautan dari kategori “sport”, dengan target mengambil isi teks utuh dari 100 artikel</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_sport</span> <span class="o">=</span> <span class="n">scraping_kategori</span><span class="p">(</span>
+    <span class="n">link_sport</span><span class="p">,</span>
+    <span class="s2">"sport"</span><span class="p">,</span>
+    <span class="n">target</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   0%|          | 0/157 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/moto-gp/d-8654776/motogp-san-marino-2026-jaga-puncak-klasemen-bukan-prioritas-jorge-martin
+Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   1%|          | 1/157 [00:02&lt;05:26,  2.09s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/raket/d-8654666/ganda-campuran-indonesia-kembali-rombak-pemain
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /raket/d-8654666/ganda-campuran-indonesia-kembali-rombak-pemain (Caused by ConnectTimeoutError(&lt;HTTPSConnection(host='sport.detik.com', port=443) at 0x1e6d7200a10&gt;, 'Connection to sport.detik.com timed out. (connect timeout=25)'))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   1%|▏         | 2/157 [00:45&lt;1:07:46, 26.24s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/sport-lain/d-8654641/ambisi-morgan-holindo-jadi-juara-nasional-eshark-rok-cup-2027
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /sport-lain/d-8654641/ambisi-morgan-holindo-jadi-juara-nasional-eshark-rok-cup-2027 (Caused by ConnectTimeoutError(&lt;HTTPSConnection(host='sport.detik.com', port=443) at 0x1e6d7201810&gt;, 'Connection to sport.detik.com timed out. (connect timeout=25)'))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   2%|▏         | 3/157 [01:29&lt;1:28:15, 34.38s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/raket/d-8654637/mens-world-tennis-championship-hari-baik-untuk-wakil-ri
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /raket/d-8654637/mens-world-tennis-championship-hari-baik-untuk-wakil-ri (Caused by NewConnectionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to establish a new connection: [WinError 10051] A socket operation was attempted to an unreachable network"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   3%|▎         | 4/157 [02:08&lt;1:32:07, 36.13s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/g-sport/d-8654605/hut-tni-akan-dimeriahkan-kejuaraan-tingkat-nasional-di-8-cabor
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /g-sport/d-8654605/hut-tni-akan-dimeriahkan-kejuaraan-tingkat-nasional-di-8-cabor (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   3%|▎         | 5/157 [02:09&lt;1:00:11, 23.76s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/sport-lain/d-8654586/ihr-2026-perluas-olahraga-pacuan-kuda-indonesia
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /sport-lain/d-8654586/ihr-2026-perluas-olahraga-pacuan-kuda-indonesia (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   4%|▍         | 6/157 [02:11&lt;40:43, 16.18s/it]  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/sport-lain/d-8654342/menuju-asian-games-2026-ketum-koi-tekankan-kolaborasi
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /sport-lain/d-8654342/menuju-asian-games-2026-ketum-koi-tekankan-kolaborasi (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   4%|▍         | 7/157 [03:21&lt;1:24:10, 33.67s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/raket/d-8654261/nova-widianto-mulai-tangani-ganda-campuran-pelatnas-pbsi
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /raket/d-8654261/nova-widianto-mulai-tangani-ganda-campuran-pelatnas-pbsi (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   5%|▌         | 8/157 [03:22&lt;58:13, 23.45s/it]  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/basket/d-8654249/timnas-basket-jadi-gelombang-pertama-datang-ke-asian-games-2026
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /basket/d-8654249/timnas-basket-jadi-gelombang-pertama-datang-ke-asian-games-2026 (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   6%|▌         | 9/157 [03:23&lt;40:39, 16.48s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/sportstyle/d-8653975/nikmati-keseruan-lari-di-solo-run-fest-2026-beli-tiketnya-via-brimo
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /sportstyle/d-8653975/nikmati-keseruan-lari-di-solo-run-fest-2026-beli-tiketnya-via-brimo (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   6%|▋         | 10/157 [03:25&lt;29:16, 11.95s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/basket/d-8653694/timnas-basket-putra-di-asian-games-2026-menangi-laga-pertama-dulu
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /basket/d-8653694/timnas-basket-putra-di-asian-games-2026-menangi-laga-pertama-dulu (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   7%|▋         | 11/157 [21:36&lt;13:52:37, 342.17s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/raket/d-8653585/asian-games-2026-putri-kw-pede-dengan-komposisi-beregu-putri
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /raket/d-8653585/asian-games-2026-putri-kw-pede-dengan-komposisi-beregu-putri (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   8%|▊         | 12/157 [21:38&lt;9:36:41, 238.63s/it] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/raket/d-8653493/tekad-alwi-farhan-lampaui-batas-di-asian-games-2026
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /raket/d-8653493/tekad-alwi-farhan-lampaui-batas-di-asian-games-2026 (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   8%|▊         | 13/157 [21:39&lt;6:40:07, 166.72s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/sport-lain/d-8653123/wrt-32-di-lone-star-le-mans-startnya-sudah-bagus-tapi
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /sport-lain/d-8653123/wrt-32-di-lone-star-le-mans-startnya-sudah-bagus-tapi (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:   9%|▉         | 14/157 [21:40&lt;4:38:20, 116.78s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/sportstyle/d-8653121/setelah-9-tahun-gelar-basket-kini-ljk-2026-rambah-padel
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /sportstyle/d-8653121/setelah-9-tahun-gelar-basket-kini-ljk-2026-rambah-padel (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:  10%|▉         | 15/157 [21:42&lt;3:13:58, 81.96s/it] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/sportstyle/d-8653076/ngedadak-padel-ketika-padel-jadi-ajang-reuni
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /sportstyle/d-8653076/ngedadak-padel-ketika-padel-jadi-ajang-reuni (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:  10%|█         | 16/157 [21:43&lt;2:15:50, 57.81s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal: https://sport.detik.com/sportstyle/d-8653072/menjaga-gaya-hidup-sehat-lewat-hyrox
+Error: HTTPSConnectionPool(host='sport.detik.com', port=443): Max retries exceeded with url: /sportstyle/d-8653072/menjaga-gaya-hidup-sehat-lewat-hyrox (Caused by NameResolutionError("HTTPSConnection(host='sport.detik.com', port=443): Failed to resolve 'sport.detik.com' ([Errno 11001] getaddrinfo failed)"))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping sport:  76%|███████▋  | 120/157 [26:49&lt;08:16, 13.41s/it] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sport berhasil: 100
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksekusi-scraping-konten-finance">
+<h2>Eksekusi Scraping Konten Finance<a class="headerlink" href="#eksekusi-scraping-konten-finance" title="Link to this heading">#</a></h2>
+<p>Kode ini menjalankan fungsi scraping_kategori untuk tautan-tautan dari kategori “finance”, dengan target mengambil isi teks utuh dari 100 artikel</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_finance</span> <span class="o">=</span> <span class="n">scraping_kategori</span><span class="p">(</span>
+    <span class="n">link_finance</span><span class="p">,</span>
+    <span class="s2">"finance"</span><span class="p">,</span>
+    <span class="n">target</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping finance:  68%|██████▊   | 104/154 [04:20&lt;02:05,  2.51s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>finance berhasil: 100
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="penggabungan-data">
+<h2>Penggabungan Data<a class="headerlink" href="#penggabungan-data" title="Link to this heading">#</a></h2>
+<p>Kode ini menggabungkan hasil scraping artikel kategori sport dan kategori finance menjadi satu kumpulan data tunggal bernama data_semua.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_semua</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">data_sport</span>
+    <span class="o">+</span>
+    <span class="n">data_finance</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pembuatan-dataframe">
+<h2>Pembuatan DataFrame<a class="headerlink" href="#pembuatan-dataframe" title="Link to this heading">#</a></h2>
+<p>Data hasil penggabungan yang masih berupa list diubah ke dalam bentuk format tabel menggunakan Pandas DataFrame (df = pd.DataFrame(data_semua)) agar lebih mudah dikelola dan dianalisis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data_semua</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="penambahan-kolom-id">
+<h2>Penambahan Kolom ID<a class="headerlink" href="#penambahan-kolom-id" title="Link to this heading">#</a></h2>
+<p>Kode ini menyisipkan kolom baru bernama “id” pada posisi indeks ke-0 (kolom pertama) pada tabel DataFrame. Kolom ID ini diisi dengan angka berurutan mulai dari 1 hingga jumlah baris data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+    <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"id"</span><span class="p">,</span>
+    <span class="nb">range</span><span class="p">(</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="penataan-urutan-kolom">
+<h2>Penataan Urutan Kolom<a class="headerlink" href="#penataan-urutan-kolom" title="Link to this heading">#</a></h2>
+<p>Kode ini mengatur ulang susunan kolom pada tabel DataFrame agar secara berurutan menampilkan kolom “id”, lalu “isi_berita”, dan terakhir “label”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s2">"id"</span><span class="p">,</span>
+        <span class="s2">"isi_berita"</span><span class="p">,</span>
+        <span class="s2">"label"</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menampilkan-data">
+<h2>Menampilkan Data<a class="headerlink" href="#menampilkan-data" title="Link to this heading">#</a></h2>
+<p>Menjalankan variabel df secara mandiri agar antarmuka Jupyter Notebook menampilkan pratinjau tabel hasil akhir data scraping.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>isi_berita</th>
+      <th>label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Men's World Tennis Championship 2026 sudah mem...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Barra Ghaisan Zeinatma menunjukkan perkembanga...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Marco Bezzecchi tak sabar menghadapi MotoGP Sa...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Marc Marquez masih harus beradaptasi dengan ko...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Pebalap Mercedes GP Kimi Antonelli tampil luar...</td>
+      <td>sport</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>196</td>
+      <td>Jakarta - Bandara ditutup akibat abu vulkanik ...</td>
+      <td>finance</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>197</td>
+      <td>Penutupan operasional tujuh bandara terdampak ...</td>
+      <td>finance</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>198</td>
+      <td>Otoritas Jasa Keuangan (OJK) mencatat 58 dana ...</td>
+      <td>finance</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>199</td>
+      <td>AirNav Indonesia kembali memperbarui informasi...</td>
+      <td>finance</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>200</td>
+      <td>Otoritas Jasa Keuangan (OJK) mencatat total ut...</td>
+      <td>finance</td>
+    </tr>
+  </tbody>
+</table>
+<p>200 rows × 3 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="pengecekan-total-data">
+<h2>Pengecekan Total Data<a class="headerlink" href="#pengecekan-total-data" title="Link to this heading">#</a></h2>
+<p>Kode ini menggunakan fungsi len(df) dan mencetaknya untuk memverifikasi serta menampilkan total baris (jumlah artikel) yang ada di dalam DataFrame secara keseluruhan</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="s2">"Total data:"</span><span class="p">,</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total data: 200
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pengecekan-proporsi-label">
+<h2>Pengecekan Proporsi Label<a class="headerlink" href="#pengecekan-proporsi-label" title="Link to this heading">#</a></h2>
+<p>Kode ini menghitung dan menampilkan jumlah data per kategori menggunakan fungsi value_counts() pada kolom “label”, untuk memastikan keseimbangan jumlah data (contohnya 100 untuk sport dan 100 untuk finance).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>label
+sport      100
+finance    100
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="penyimpanan-data-ke-file-excel">
+<h2>Penyimpanan Data ke File Excel<a class="headerlink" href="#penyimpanan-data-ke-file-excel" title="Link to this heading">#</a></h2>
+<p>Kode ini menyimpan (mengekspor) tabel DataFrame Pandas yang sudah final ke dalam sebuah file Excel dengan nama dataset_detik_200_berita.xlsx. Indeks bawaan Pandas tidak disertakan ke dalam file Excel tersebut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nama_file</span> <span class="o">=</span> <span class="s2">"dataset_detik_200_berita.xlsx"</span>
+
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span>
+    <span class="n">nama_file</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">"File berhasil disimpan:"</span><span class="p">,</span>
+    <span class="n">nama_file</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File berhasil disimpan: dataset_detik_200_berita.xlsx
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pengecekan-lokasi-file">
+<h2>Pengecekan Lokasi File<a class="headerlink" href="#pengecekan-lokasi-file" title="Link to this heading">#</a></h2>
+<p>Menggunakan modul os bawaan Python, kode ini melacak dan mencetak path absolut (lokasi spesifik di dalam memori/komputer) tempat file Excel hasil scraping tersebut baru saja disimpan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">"dataset_detik_200_berita.xlsx"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\safit\Documents\PPW\dataset_detik_200_berita.xlsx
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "nwebmining"
+        },
+        kernelOptions: {
+            name: "nwebmining",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'nwebmining'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to Amelia’s Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-library">Instalasi Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-konfigurasi-awal">Import Library dan Konfigurasi Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-normalisasi-url">Fungsi Normalisasi URL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-pengambilan-tautan-berita">Fungsi Pengambilan Tautan Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scraping-link-kategori-sport">Scraping Link Kategori Sport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scraping-link-kategori-finance">Scraping Link Kategori Finance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-pembersihan-teks-berita">Fungsi Pembersihan Teks Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-ekstraksi-isi-berita">Fungsi Ekstraksi Isi Berita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-scraping-konten-berdasarkan-kategori">Fungsi Scraping Konten Berdasarkan Kategori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksekusi-scraping-konten-sport">Eksekusi Scraping Konten Sport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksekusi-scraping-konten-finance">Eksekusi Scraping Konten Finance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penggabungan-data">Penggabungan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuatan-dataframe">Pembuatan DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penambahan-kolom-id">Penambahan Kolom ID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penataan-urutan-kolom">Penataan Urutan Kolom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data">Menampilkan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-total-data">Pengecekan Total Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-proporsi-label">Pengecekan Proporsi Label</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyimpanan-data-ke-file-excel">Penyimpanan Data ke File Excel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-lokasi-file">Pengecekan Lokasi File</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Amelia Safitri
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
