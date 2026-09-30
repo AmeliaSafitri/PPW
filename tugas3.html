@@ -2585,6 +2585,44 @@ weighted avg       0.98      0.97      0.97        40
   </div>
 </div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat copy dataframe dengan kolom yang dipilih</span>
+<span class="n">hasil_export</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span>
+    <span class="s2">"id"</span><span class="p">,</span>
+    <span class="s2">"isi_berita"</span><span class="p">,</span>
+    <span class="s2">"label"</span><span class="p">,</span>
+    <span class="s2">"case_folding"</span><span class="p">,</span>
+    <span class="s2">"tanpa_tanda_baca"</span><span class="p">,</span>
+    <span class="s2">"tanpa_angka"</span><span class="p">,</span>
+    <span class="s2">"clean_text"</span><span class="p">,</span>
+    <span class="s2">"tokens_stopword"</span><span class="p">,</span>
+    <span class="s2">"tokens_stemmed"</span>
+<span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Mengubah list token menjadi string tunggal yang dipisahkan spasi</span>
+<span class="n">hasil_export</span><span class="p">[</span><span class="s2">"tokens_stopword"</span><span class="p">]</span> <span class="o">=</span> <span class="n">hasil_export</span><span class="p">[</span><span class="s2">"tokens_stopword"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span>
+<span class="p">)</span>
+<span class="n">hasil_export</span><span class="p">[</span><span class="s2">"tokens_stemmed"</span><span class="p">]</span> <span class="o">=</span> <span class="n">hasil_export</span><span class="p">[</span><span class="s2">"tokens_stemmed"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span>
+<span class="p">)</span>
+
+<span class="c1"># Menyimpan hasil ke dalam file Excel</span>
+<span class="n">hasil_export</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">"hasil_preprocessing.xlsx"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"File berhasil disimpan sebagai:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"hasil_preprocessing.xlsx"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File berhasil disimpan sebagai:
+hasil_preprocessing.xlsx
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
